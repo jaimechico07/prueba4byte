@@ -21,10 +21,6 @@ http://localhost:4200
 ## 🚀 Demo
 Aplicación web de catálogo de productos con autenticación, CRUD completo y búsqueda en tiempo real.
 
-### Credenciales de acceso
-Usuario: mor_2314
-Contraseña: 83r5^_
-
 ## 📋 Requerimientos Cumplidos
 
 ### ✅ Autenticación
@@ -57,19 +53,7 @@ Contraseña: 83r5^_
 - Loading states con ProgressSpinner
 - Diálogo de confirmación para acciones destructivas
 
-## 🛠️ Tecnologías Utilizadas
-
-| Tecnología | Versión | Uso |
-|------------|---------|-----|
-| Angular | 20.x | Framework principal |
-| TypeScript | 5.x | Lenguaje |
-| PrimeNG | 20.x | Componentes UI |
-| PrimeIcons | 7.x | Iconos |
-| RxJS | 7.x | Manejo de observables |
-| Signals | 20.x | Estado reactivo |
-
 ## 📁 Estructura del Proyecto
-
 rc/app/
 ├── core/
 │ ├── guards/
@@ -156,5 +140,14 @@ rc/app/
 ### API Externa
 - [FakeStore API](https://fakestoreapi.com) - API pública para pruebas
 
+## 🌐 Demo en vivo
 
+| Link | Descripción |
+|------|-------------|
+| [🔗 Ver aplicación desplegada](https://prueba4byte.netlify.app) | Aplicación en Netlify |
+| [📂 Código fuente en GitHub](https://github.com/jaimechico07/prueba4byte) | Repositorio del proyecto |
+
+### Credenciales de acceso
+Usuario: mor_2314
+Contraseña: 83r5^_
 
