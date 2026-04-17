@@ -54,6 +54,7 @@ Aplicación web de catálogo de productos con autenticación, CRUD completo y b�
 - Diálogo de confirmación para acciones destructivas
 
 ## 📁 Estructura del Proyecto
+```bash
 rc/app/
 ├── core/
 │ ├── guards/
@@ -73,6 +74,7 @@ rc/app/
 │ └── product.service.ts # CRUD productos
 ├── app.config.ts # Configuración global
 └── app.routes.ts # Definición de rutas
+```
 
 ### 📱 Funcionalidades
 **Login**
@@ -148,6 +150,7 @@ rc/app/
 | [📂 Código fuente en GitHub](https://github.com/jaimechico07/prueba4byte) | Repositorio del proyecto |
 
 ### Credenciales de acceso
+```bash
 Usuario: mor_2314
 Contraseña: 83r5^_
-
+```
