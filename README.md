@@ -142,13 +142,6 @@ rc/app/
 ### API Externa
 - [FakeStore API](https://fakestoreapi.com) - API pública para pruebas
 
-## 🌐 Demo en vivo
-
-| Link | Descripción |
-|------|-------------|
-| [🔗 Ver aplicación desplegada](https://prueba4byte.netlify.app) | Aplicación en Netlify |
-| [📂 Código fuente en GitHub](https://github.com/jaimechico07/prueba4byte) | Repositorio del proyecto |
-
 ## 🧪 Pruebas Unitarias
 
 Se implementaron pruebas unitarias para el componente `LoginComponent` utilizando **Vitest** (test runner predeterminado en Angular 21).
@@ -165,8 +158,6 @@ Se implementaron pruebas unitarias para el componente `LoginComponent` utilizand
 | `credenciales incorrectas` | Valida mensaje de error con credenciales inválidas | ✅ |
 | `loading state` | Verifica que el estado de carga se active durante el login | ✅ |
 
-## 🧪 Pruebas Unitarias
-
 ```bash
 # Ejecuta pruebas con Angular CLI (Vitest)
 ng test
@@ -175,6 +166,27 @@ npm run test
 # Ejecuta pruebas con Vitest UI
 npm run test:ui
 ```
+
+## 🔧 Decisiones Técnicas
+- **Angular 21 + Signals**: Estado reactivo moderno sin NgModules
+- **PrimeNG 21**: Componentes UI listos para usar
+- **Vitest**: Test runner oficial y más rápido
+- **Interceptor + AuthGuard**: Seguridad y protección de rutas
+- **Toast + ConfirmDialog**: Feedback visual y confirmaciones
+
+## 🚀 Mejoras Futuras
+- [ ] Paginación y filtros avanzados
+- [ ] Carrito de compras
+- [ ] Tema oscuro
+- [ ] Subida de imágenes propias
+- [ ] PWA para instalación en dispositivos
+
+## 🌐 Demo en vivo
+
+| Link | Descripción |
+|------|-------------|
+| [🔗 Ver aplicación desplegada](https://prueba4byte.netlify.app) | Aplicación en Netlify |
+| [📂 Código fuente en GitHub](https://github.com/jaimechico07/prueba4byte) | Repositorio del proyecto |
 
 ### Credenciales de acceso
 ```bash
