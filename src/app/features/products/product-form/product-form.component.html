@@ -1,0 +1,123 @@
+<div class="form-container">
+  <div class="header">
+    <h1>{{ isEditMode() ? 'Edit Product' : 'Create New Product' }}</h1>
+    <p-button
+      label="Cancel"
+      icon="pi pi-times"
+      (click)="cancel()"
+      styleClass="p-button-text p-button-info"
+    ></p-button>
+  </div>
+
+  <p-toast position="top-right"></p-toast>
+
+  @if (loading()) {
+    <div class="loading-container">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  } @else {
+    <p-card>
+      <form (ngSubmit)="onSubmit()">
+        <div class="field">
+          <label for="title">Title *</label>
+          <input
+            type="text"
+            pInputText
+            id="title"
+            [(ngModel)]="product.title"
+            name="title"
+            class="full-width"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="price">Price * (USD)</label>
+          <input
+            type="number"
+            pInputText
+            id="price"
+            [(ngModel)]="product.price"
+            name="price"
+            class="full-width"
+            step="0.01"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="category">Category *</label>
+          <p-select
+            id="category"
+            [options]="categorias"
+            [(ngModel)]="product.category"
+            name="category"
+            placeholder="Select a category"
+            class="full-width"
+            required
+          ></p-select>
+        </div>
+
+        <div class="field">
+          <label for="image">Image URL *</label>
+          <p-fileUpload
+            #fileUpload
+            name="image"
+            [multiple]="false"
+            accept="image/*"
+            maxFileSize="1000000"
+            chooseLabel="Seleccionar imagen"
+            [auto]="true"
+            (onSelect)="onImageSelected($event)"
+            [showUploadButton]="false"
+            [showCancelButton]="false"
+          >
+            <ng-template pTemplate="content">
+              @if (product.image) {
+                <div class="image-preview">
+                  <img [src]="product.image" alt="Preview" class="preview-image" />
+                  <p-button
+                    icon="pi pi-times"
+                    (click)="clearImage()"
+                    [rounded]="true"
+                    [text]="true"
+                    severity="danger"
+                  />
+                </div>
+              }
+              @if (!product.image) {
+                <div class="upload-placeholder">
+                  <i class="pi pi-image"></i>
+                  <p>Drag and drop or click to select</p>
+                </div>
+              }
+            </ng-template>
+          </p-fileUpload>
+          <small class="text-muted">Formatos permitidos: JPG, PNG, GIF. Tamaño máximo: 1MB.</small>
+        </div>
+
+        <div class="field">
+          <label for="description">Description *</label>
+          <textarea
+            pTextarea
+            id="description"
+            [(ngModel)]="product.description"
+            name="description"
+            rows="5"
+            class="full-width"
+            required
+          ></textarea>
+        </div>
+
+        <div class="button-container">
+          <p-button
+            type="submit"
+            [label]="isEditMode() ? 'Update Product' : 'Create Product'"
+            icon="pi pi-save"
+            [loading]="loading()"
+          ></p-button>
+        </div>
+      </form>
+    </p-card>
+  }
+</div>

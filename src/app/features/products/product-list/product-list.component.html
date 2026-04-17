@@ -1,0 +1,97 @@
+<div class="products-container">
+  <p-confirmDialog></p-confirmDialog>
+  <p-toast
+    position="top-right"
+    [breakpoints]="{ '920px': { width: '90%', right: '5%' } }"
+  ></p-toast>
+
+  <div class="header">
+    <h1>Product Catalog</h1>
+    <div class="header-actions">
+      <p-button label="Logout" icon="pi pi-sign-out" severity="info" (click)="logout()"></p-button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="search-box">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="searchTerm"
+          placeholder="Search products..."
+          class="search-input"
+        />
+      </span>
+      <p-button
+        label="New Product"
+        icon="pi pi-plus"
+        [routerLink]="['/products/new']"
+        styleClass="p-button-success"
+      ></p-button>
+    </div>
+  </div>
+
+  @if (loading()) {
+    <div class="loading-container">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  } @else {
+    <p-table
+      [value]="filteredProducts()"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>
+            <img
+              [src]="product.image"
+              [alt]="product.title"
+              class="product-image"
+              (error)="handleImageError($event)"
+            />
+          </td>
+          <td>{{ product.title }}</td>
+          <td>
+            <span class="category-badge">{{ product.category }}</span>
+          </td>
+          <td>{{ product.price | currency: 'USD' }}</td>
+          <td>
+            <div class="action-buttons">
+              <p-button
+                label=""
+                icon="pi pi-eye"
+                [routerLink]="['/product', product.id]"
+                styleClass="p-button-outlined p-button-sm"
+              ></p-button>
+              <p-button
+                label=""
+                icon="pi pi-pencil"
+                [routerLink]="['/products/edit', product.id]"
+                styleClass="p-button-outlined p-button-sm p-button-info"
+              ></p-button>
+              <p-button
+                label=""
+                icon="pi pi-trash"
+                (click)="confirmDelete(product)"
+                styleClass="p-button-outlined p-button-sm p-button-danger"
+              ></p-button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  }
+</div>

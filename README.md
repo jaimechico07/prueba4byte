@@ -1,59 +1,160 @@
-# Prueba4byte
+# 📦 Product Catalog - Prueba Técnica Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+## 🚀 Instalación y Ejecución
 
-## Development server
+### Requisitos previos
+- Node.js 18+
+- Angular CLI 21+
 
-To start a local development server, run:
+### Pasos
 
 ```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Ejecutar en desarrollo
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# 3. Abrir navegador en
+http://localhost:4200
 
-## Code scaffolding
+## 🚀 Demo
+Aplicación web de catálogo de productos con autenticación, CRUD completo y búsqueda en tiempo real.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Credenciales de acceso
+Usuario: mor_2314
+Contraseña: 83r5^_
 
-```bash
-ng generate component component-name
-```
+## 📋 Requerimientos Cumplidos
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### ✅ Autenticación
+- Login con username/password consumiendo `/auth/login`
+- Token almacenado en localStorage
+- Interceptor HTTP para enviar token como Bearer
+- AuthGuard para proteger rutas
+- Logout con limpieza de token
 
-```bash
-ng generate --help
-```
+### ✅ Catálogo de Productos
+- Listado en tabla con PrimeNG
+- Paginación (5, 10, 20 items por página)
+- Búsqueda global por nombre en tiempo real
+- Imágenes con tamaño consistente
 
-## Building
+### ✅ Detalle de Producto
+- Vista individual con imagen, nombre, descripción, precio y categoría
+- Botón de regreso al listado
 
-To build the project run:
+### ✅ CRUD Completo
+- **Create**: Formulario para crear nuevos productos
+- **Read**: Listado y detalle
+- **Update**: Edición de productos existentes
+- **Delete**: Eliminación con diálogo de confirmación
 
-```bash
-ng build
-```
+### ✅ UI/UX
+- Diseño limpio y responsive
+- Componentes PrimeNG: Table, Button, InputText, Card, Toast, ConfirmDialog, Select
+- Mensajes de éxito/error con Toast
+- Loading states con ProgressSpinner
+- Diálogo de confirmación para acciones destructivas
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🛠️ Tecnologías Utilizadas
 
-## Running unit tests
+| Tecnología | Versión | Uso |
+|------------|---------|-----|
+| Angular | 20.x | Framework principal |
+| TypeScript | 5.x | Lenguaje |
+| PrimeNG | 20.x | Componentes UI |
+| PrimeIcons | 7.x | Iconos |
+| RxJS | 7.x | Manejo de observables |
+| Signals | 20.x | Estado reactivo |
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📁 Estructura del Proyecto
 
-```bash
-ng test
-```
+rc/app/
+├── core/
+│ ├── guards/
+│ │ └── auth.guard.ts # Protección de rutas
+│ ├── interceptors/
+│ │ └── auth.interceptor.ts # Inyección de token
+│ └── services/
+│ └── auth.service.ts # Autenticación
+├── features/
+│ ├── login/
+│ │ └── login.component.ts # Pantalla de login
+│ ├── products/
+│ │ ├── product-list/ # Listado de productos
+│ │ ├── product-detail/ # Detalle de producto
+│ │ └── product-form/ # Crear/Editar producto
+│ └── services/
+│ └── product.service.ts # CRUD productos
+├── app.config.ts # Configuración global
+└── app.routes.ts # Definición de rutas
 
-## Running end-to-end tests
+### 📱 Funcionalidades
+**Login**
+- Pantalla inicial con formulario de autenticación
+- Validación de campos
+- Mensaje de error para credenciales inválidas
+- Redirección automática al catálogo
 
-For end-to-end (e2e) testing, run:
+**Listado de Productos**
+- Tabla con imagen, nombre, categoría, precio y acciones
+- Paginación integrada
+- Búsqueda en tiempo real por nombre
+- Botones: Ver detalle, Editar, Eliminar
+- Botón para crear nuevo producto
+- Botón de logout
 
-```bash
-ng e2e
-```
+**Detalle de Producto**
+- Información completa del producto
+- Imagen de mayor tamaño
+- Categoría con badge
+- Precio destacado
+- Descripción completa
+- Rating (si está disponible)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+**Crear/Editar Producto**
+- Formulario con validaciones
+- Campos: título, precio, categoría, imagen URL, descripción
+- Select para categorías predefinidas
+- Vista previa de imagen
+- Mensajes de éxito/error
 
-## Additional Resources
+### 🎨 Componentes PrimeNG Utilizados
+| Componente | Módulo | Uso |
+|-------|-------|-------|
+| Table |	TableModule |	Listado de productos |
+| Button | ButtonModule | Acciones |
+| InputText | InputTextModule |	Campos de texto |
+| Select | SelectModule | Selección de categoría |
+| Card | CardModule | Contenedores |
+| Toast | ToastModule |	Notificaciones |
+| ProgressSpinner | ProgressSpinnerModule | Loading |
+| ConfirmDialog | ConfirmDialogModule | Confirmación de eliminación |
+| Messages |	MessagesModule | Mensajes de error |
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 🌐 API Endpoints Utilizados
+| Método |	Endpoint |	Uso |
+|-------|-------|-------|
+| POST | /auth/login | Autenticación |
+| GET	| /products | Obtener todos |
+| GET | /products/:id |	Obtener uno |
+| POST | /products | Crear producto |
+| PUT |	/products/:id | Actualizar producto |
+| DELETE | /products/:id |	Eliminar producto |
+
+## 🛠️ Tecnologías Utilizadas
+| Tecnología | Versión | Uso |
+|------------|---------|-----|
+| Angular | 21.x | Framework principal |
+| TypeScript | 5.9.x | Lenguaje |
+| PrimeNG | 21.x | Componentes UI |
+| PrimeIcons | 7.x | Iconos |
+| RxJS | 7.8.x | Manejo de observables |
+| Signals | 21.x | Estado reactivo |
+
+### API Externa
+- [FakeStore API](https://fakestoreapi.com) - API pública para pruebas
+
+
+

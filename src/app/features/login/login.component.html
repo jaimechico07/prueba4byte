@@ -1,0 +1,53 @@
+<div class="login-container">
+  <figure class="img-store"></figure>
+  <div class="login-form">
+    <p-toast position="top-right"></p-toast>
+
+    <p-card class="login-card">
+      <form (ngSubmit)="onSubmit()">
+        <div class="field">
+          <p class="card-title">Login</p>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            pInputText
+            id="username"
+            [(ngModel)]="username"
+            name="username"
+            required
+            class="full-width"
+            placeholder="Enter username"
+          />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            pInputText
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            class="full-width"
+            placeholder="Enter password"
+          />
+        </div>
+
+        <div class="button-container">
+          <p-button
+            type="submit"
+            label="Login"
+            severity="info"
+            [loading]="loading()"
+            [disabled]="loading()"
+          ></p-button>
+        </div>
+
+        <div class="demo-info">
+          <small>Demo credentials: <strong>mor_2314</strong> / <strong>83r5^_</strong></small>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</div>
