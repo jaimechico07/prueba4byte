@@ -7,7 +7,6 @@
 - Angular CLI 21+
 
 ### Pasos
-
 ```bash
 # 1. Instalar dependencias
 npm install
@@ -17,13 +16,14 @@ ng serve
 
 # 3. Abrir navegador en
 http://localhost:4200
+```
 
 ## 🚀 Demo
 Aplicación web de catálogo de productos con autenticación, CRUD completo y búsqueda en tiempo real.
 
 ## 📋 Requerimientos Cumplidos
 
-### ✅ Autenticación
+### Autenticación
 - Login con username/password consumiendo `/auth/login`
 - Token almacenado en localStorage
 - Interceptor HTTP para enviar token como Bearer
