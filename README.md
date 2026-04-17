@@ -149,6 +149,33 @@ rc/app/
 | [🔗 Ver aplicación desplegada](https://prueba4byte.netlify.app) | Aplicación en Netlify |
 | [📂 Código fuente en GitHub](https://github.com/jaimechico07/prueba4byte) | Repositorio del proyecto |
 
+## 🧪 Pruebas Unitarias
+
+Se implementaron pruebas unitarias para el componente `LoginComponent` utilizando **Vitest** (test runner predeterminado en Angular 21).
+
+### Cobertura de pruebas
+
+| Prueba | Descripción | Estado |
+|--------|-------------|--------|
+| `should create` | Verifica que el componente se crea correctamente | ✅ |
+| `campos vacíos` | Valida que se muestre error cuando ambos campos están vacíos | ✅ |
+| `solo username vacío` | Valida error cuando solo el username está vacío | ✅ |
+| `solo password vacío` | Valida error cuando solo el password está vacío | ✅ |
+| `login exitoso` | Verifica navegación a `/products` con credenciales correctas | ✅ |
+| `credenciales incorrectas` | Valida mensaje de error con credenciales inválidas | ✅ |
+| `loading state` | Verifica que el estado de carga se active durante el login | ✅ |
+
+## 🧪 Pruebas Unitarias
+
+```bash
+# Ejecuta pruebas con Angular CLI (Vitest)
+ng test
+npm run test
+
+# Ejecuta pruebas con Vitest UI
+npm run test:ui
+```
+
 ### Credenciales de acceso
 ```bash
 Usuario: mor_2314

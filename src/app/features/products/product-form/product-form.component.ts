@@ -28,7 +28,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     ToastModule,
     FileUploadModule,
   ],
-  providers: [MessageService],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css',
 })

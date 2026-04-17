@@ -30,7 +30,6 @@ import { MessageService } from 'primeng/api';
     ToastModule,
     ConfirmDialogModule,
   ],
-  providers: [MessageService, ConfirmationService],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })

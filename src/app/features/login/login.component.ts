@@ -13,7 +13,6 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-login',
   imports: [CommonModule, FormsModule, ToastModule, ButtonModule, InputTextModule, CardModule],
-  providers: [MessageService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -29,6 +28,33 @@ export class LoginComponent {
   ) {}
 
   onSubmit(): void {
+    if (!this.username && !this.password) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Login Failed',
+        detail: 'Please enter username and password',
+        life: 5000,
+      });
+      return;
+    }
+
+    if (!this.username) {
+      this.messageService.add({
+        severity: 'error',
+        detail: 'Please enter username',
+      });
+      return;
+    }
+
+    if (!this.password) {
+      this.messageService.add({
+        severity: 'error',
+        detail: 'Please enter password',
+      });
+      return;
+    }
+
+    this.loading.set(true);
     this.authService
       .login({
         username: this.username,
@@ -45,6 +71,7 @@ export class LoginComponent {
           this.router.navigate(['/products']);
         },
         error: (error) => {
+          this.loading.set(false);
           this.messageService.add({
             severity: 'error',
             summary: 'Login Failed',

@@ -21,7 +21,6 @@ import { MessageService } from 'primeng/api';
     ChipModule,
     ToastModule,
   ],
-  providers: [MessageService],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })
