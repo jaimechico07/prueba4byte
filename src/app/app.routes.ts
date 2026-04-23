@@ -15,7 +15,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'products/new', // ← Nueva ruta
+    path: 'products/new',
     canActivate: [authGuard],
     loadComponent: () =>
       import('./features/products/product-form/product-form.component').then(
@@ -23,7 +23,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'products/edit/:id', // ← Nueva ruta
+    path: 'products/edit/:id',
     canActivate: [authGuard],
     loadComponent: () =>
       import('./features/products/product-form/product-form.component').then(
